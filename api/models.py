@@ -13,7 +13,7 @@ from tensorflow.keras.models import load_model
 class Digit(models.Model):
 
     image = models.ImageField(upload_to="digits")
-    classification = models.CharField(max_length=30)
+    classification = models.CharField(max_length=30, blank=True, null=True)
 
     def save(self, *args, **kwargs):
         img = Image.open(self.image)
